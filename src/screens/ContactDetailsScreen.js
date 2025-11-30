@@ -19,14 +19,14 @@ export default function ContactDetailsScreen({ navigation, route }) {
                     style: 'destructive',
                     onPress: () => {
                         deleteContact(contact.id);
-                        navigation.goBack();
+                        // Navigation directe vers la liste des contacts (pas goBack)
+                        navigation.navigate('ContactsList');
                     },
                 },
             ]
         );
     };
 
-    // Données d'historique avec le numéro du contact
     const callHistoryData = [
         { date: 'Apr 27, 14:16', number: contact.phone, status: "Didn't connect", icon: 'call-made' },
         { date: 'Apr 20, 10:35', number: contact.phone, status: 'Rang 5 times', icon: 'call-received' },
